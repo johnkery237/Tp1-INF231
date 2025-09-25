@@ -1,0 +1,36 @@
+🔹 8. Produit vectoriel (Vecteurs 3D)
+
+Le produit vectoriel est défini seulement en 3D :
+Si u = (u1, u2, u3) et v = (v1, v2, v3) alors :
+
+u \times v = (u2*v3 - u3*v2, \; u3*v1 - u1*v3, \; u1*v2 - u2*v1)
+
+Voici le code :
+
+#include <stdio.h>
+
+int main() {
+    int u[3], v[3], produit[3];
+    int i;
+
+    // Lecture des vecteurs
+    printf("Entrez les 3 composantes du vecteur u : ");
+    for(i = 0; i < 3; i++) {
+        scanf("%d", &u[i]);
+    }
+
+    printf("Entrez les 3 composantes du vecteur v : ");
+    for(i = 0; i < 3; i++) {
+        scanf("%d", &v[i]);
+    }
+
+    // Calcul du produit vectoriel
+    produit[0] = u[1]*v[2] - u[2]*v[1];
+    produit[1] = u[2]*v[0] - u[0]*v[2];
+    produit[2] = u[0]*v[1] - u[1]*v[0];
+
+    // Affichage
+    printf("Produit vectoriel u × v = (%d, %d, %d)\n", produit[0], produit[1], produit[2]);
+
+    return 0;
+}
