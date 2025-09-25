@@ -1,0 +1,39 @@
+🔹 7. Inverser un tableau
+
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    
+    printf("Entrez la taille du tableau : ");
+    scanf("%d", &n);
+
+    int tab[n];
+
+    // Lecture des éléments
+    printf("Entrez les %d éléments du tableau :\n", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &tab[i]);
+    }
+
+    // Affichage avant inversion
+    printf("Tableau avant inversion : ");
+    for(i = 0; i < n; i++) {
+        printf("%d ", tab[i]);
+    }
+
+    // Inversion du tableau
+    for(i = 0; i < n/2; i++) {
+        int temp = tab[i];
+        tab[i] = tab[n-1-i];
+        tab[n-1-i] = temp;
+    }
+
+    // Affichage après inversion
+    printf("\nTableau après inversion : ");
+    for(i = 0; i < n; i++) {
+        printf("%d ", tab[i]);
+    }
+
+    return 0;
+}
